@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- css from libraries -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<!--  <link href="css/font-awesome-4.6.3/css/font-awesome.min.css">-->
+  <link rel="stylesheet" href="css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="css/leaflet-sidebar.min.css" />
+  <link rel="stylesheet" href="css/leaflet.css" />
+  <link rel="stylesheet" href="css/MarkerCluster.css" />
+  <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
+  <link rel="stylesheet" href="css/orangebox.css">
+
+
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+  <div class="map-application">
+
+    <div id="sidebar" class="sidebar collapsed">
+      <!-- Nav tabs -->
+      <div class="sidebar-tabs">
+        <ul role="tablist">
+          <li><a href="#home" role="tab"><i class="fa fa-tree"></i></a></li>
+          <li><a href="#profile" role="tab"><i class="fa fa-usd"></i></a></li>
+        </ul>
+
+        <ul role="tablist">
+          <li><a href="#settings" role="tab"><i class="fa fa-info"></i></a></li>
+        </ul>
+      </div>
+
+      <!-- Tab panes -->
+      <div class="sidebar-content">
+        <div class="sidebar-pane" id="home">
+          <h1 class="sidebar-header">
+                    About this lot
+                    <span class="sidebar-close"><i class="fa fa-caret-right"></i></span>
+                </h1>
+
+          <p>Forest: <span id="forest"></span></p>
+          <p>Total trees: <span id="total_trees"></span></p>
+          <p>Acreage: <span id="acreage"></span></p>
+          <p>Volume: <span id="volume"></span></p>
+        </div>
+
+        <div class="sidebar-pane" id="profile">
+          <h1 class="sidebar-header">Bids<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
+
+          <p>Sold to: <span id="sold_to"></span></p>
+          <p>Date: <span id="date"></span></p>
+          <p>Total sale price: <span id="total_sale_price"></span></p>
+          <p>Sale #: <span id="sale_number"></span></p>
+          <p><a href="http://stlab.adobe.com/wiki/images/d/d3/Test.pdf" data-ob="lightbox">PDF</a></p>
+        </div>
+
+        <div class="sidebar-pane" id="settings">
+          <h1 class="sidebar-header">About this map<span class="sidebar-close"><i class="fa fa-caret-right"></i></span></h1>
+
+          <p>Data from _________</p>
+          <p>Data processing by _________</p>
+          <p>Map created by ________</p>
+          <p>Contact info: _________</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="map" class="map"></div>
+  </div>
+
+
+
+  <!-- js from libraries -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/jquery-sidebar.min.js"></script>
+  <script src="js/leaflet.js"></script>
+  <script src="js/leaflet-sidebar.min.js"></script>
+  <script src="js/leaflet.geocsv.js"></script>
+  <script src="js/leaflet.markercluster.js"></script>
+  <script src="js/leaflet.markercluster.layersupport-src.js"></script>
+  <script src="js/leaflet.SliderControl.min.js"></script>
+  <script src="js/orangebox.min.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

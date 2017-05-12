@@ -1,0 +1,42 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+body,
+html {
+	font-family: Arial, sans-serif;
+	height: 100%;
+}
+.map {
+	width: 100%;
+	height: 100%;
+}
+
+.map-application {
+	height: 100%;
+
+}
+
+/* override leaflet margin so that slider's annotation is visible */
+.leaflet-bottom .leaflet-control {
+  margin-bottom: 2em;
+}
+
+/* override orangebox styles */
+#ob_overlay {
+	z-index:2000;
+}
+#ob_container {
+	z-index:2001;
+}
+#ob_content {
+  border: 0px;
+}
