@@ -7,7 +7,20 @@
 
   var sidebar;
 
-  L.Icon.Default.imagePath = 'images/';
+
+
+  // L.Icon.Default.imagePath = 'images/';
+
+  var greenIcon = L.icon({
+    iconUrl: 'images/leaf-green.png',
+    shadowUrl: 'images/leaf-shadow.png',
+
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
   /* create leaflet map */
   var map = L.map('map', {
@@ -54,16 +67,11 @@
         sidebar.open('home');
       });
     },
-    /*pointToLayer: function (feature, latlng) {
+    pointToLayer: function (feature, latlng) {
       return L.marker(latlng, {
-        icon: L.icon({
-          iconUrl: 'images/marker-icon.png',
-          shadowUrl: 'images/marker-shadow.png',
-          iconSize: [41, 41],
-          shadowAnchor: [13, 20]
-        })
+        icon: greenIcon 
       });
-    },*/
+    },
   });
 
   $.ajax({
