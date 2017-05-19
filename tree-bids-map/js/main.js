@@ -13,13 +13,13 @@
 
   var treeIcon = L.icon({
     iconUrl: 'images/tree.png',
-    shadowUrl: 'images/marker-shadow.png',
+    shadowUrl: 'images/tree-shadow.png',
 
     iconSize:     [50, 50], // size of the icon
-    // shadowSize:   [50, 64], // size of the shadow
+    shadowSize:   [40, 40], // size of the shadow
     iconAnchor:   [25, 49], // point of the icon which will correspond to marker's location
-    // shadowAnchor: [50, 49],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    shadowAnchor: [5, 36],  // the same for the shadow
+    // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
   /* create leaflet map */
@@ -61,7 +61,9 @@
 
         $('#sold_to').text(feature.properties.sold_to);
         $('#date').text(feature.properties.time);
+        $('#total_cost').text(feature.properties.total_cost);
         $('#total_sale_price').text(feature.properties.total_sale_price);
+        $('#net').text(feature.properties.net);
         $('#sale_number').text(feature.properties.sale_number);
 
         sidebar.open('home');
