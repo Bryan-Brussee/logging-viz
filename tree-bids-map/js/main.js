@@ -32,10 +32,9 @@
     });
 
   /* add default stamen tile layer */
-  L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+  L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYnJ5YW5icnVzc2VlIiwiYSI6ImNpdzFua2NmeDA5N2UydG11enhtdzQxdjIifQ.bIm3DjceLQSfvBBN1Kwr7A', {
     minZoom: 0,
-    maxZoom: 18,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a></a>'
+    maxZoom: 18
   }).addTo(map);
 
   sidebar = L.control.sidebar('sidebar', {
