@@ -211,7 +211,7 @@
 	}
 .leaflet-bar a,
 .leaflet-bar a:hover {
-	background-color: rgba(100, 161, 50,0.6);
+	background-color: rgba(250, 250, 250,.9);
 	border-bottom: 1px solid #ddd;
 	width: 26px;
 	height: 26px;

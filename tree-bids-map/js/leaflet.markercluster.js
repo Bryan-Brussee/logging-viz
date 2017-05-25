@@ -9,7 +9,7 @@
                 maxClusterRadius: 80,
                 iconCreateFunction: null,
                 spiderfyOnMaxZoom: !0,
-                showCoverageOnHover: !0,
+                showCoverageOnHover: !1,
                 zoomToBoundsOnClick: !0,
                 singleMarkerMode: !1,
                 disableClusteringAtZoom: null,
