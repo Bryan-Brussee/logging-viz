@@ -40,3 +40,6 @@ html {
 #ob_content {
   border: 0px;
 }
+p {
+	line-height: 2em;
+}

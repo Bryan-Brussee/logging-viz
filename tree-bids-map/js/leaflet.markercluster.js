@@ -19,8 +19,8 @@
                 spiderfyDistanceMultiplier: 1,
                 spiderLegPolylineOptions: {
                     weight: 1.5,
-                    color: "#222",
-                    opacity: .5
+                    color: "#7AAB01",
+                    opacity: .6
                 },
                 chunkedLoading: !1,
                 chunkInterval: 200,
@@ -202,14 +202,16 @@
                 }
                 this.fire(t.type, t)
             },
+            //modified icon creation
             _defaultIconCreateFunction: function(t) {
                 var e = t.getChildCount(),
                     i = " marker-cluster-";
                 return i += 10 > e ? "small" : 100 > e ? "medium" : "large", new L.DivIcon({
                     html: "<div><span>" + e + "</span></div>",
                     className: "marker-cluster" + i,
-                    iconSize: new L.Point(40, 40)
+                    iconSize: 10 > e ? new L.Point(40+e, 40+e) : 100 > e ? new L.Point(50+(e/5), 50+(e/5)) : new L.point(70+(e/20), 70+(e/20))
                 })
+
             },
             _bindEvents: function() {
                 var t = this._map,

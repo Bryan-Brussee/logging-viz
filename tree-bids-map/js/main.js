@@ -45,21 +45,15 @@
     firstLineTitles: true,
     fieldSeparator: ';',
     onEachFeature: function (feature, layer) {
-      /*var popup = '';
-      for (var prop in feature.properties) {
-        var title = csvLayer.getPropertyTitle(prop);
-        popup += '<b>' + title + '</b><br />' + 
-          feature.properties[prop] + '<br /><br />';
-      }
-      layer.bindPopup(popup);*/
+
       layer.on('click', function (e) {
         $('#forest').text(feature.properties.forest);
         $('#total_trees').text(feature.properties.total_trees);
         $('#acreage').text(feature.properties.acreage);
         $('#volume').text(feature.properties.volume);
-
+        
         $('#sold_to').text(feature.properties.sold_to);
-        $('#date').text(feature.properties.time);
+        $('#date').text(feature.properties.date);
         $('#total_cost').text(feature.properties.total_cost);
         $('#total_sale_price').text(feature.properties.total_sale_price);
         $('#net').text(feature.properties.net);
@@ -96,9 +90,7 @@
       map.addControl(sliderControl);
       sliderControl.startSlider();
     },
-    complete: function () {
-      //        $('#cargando').delay(500).fadeOut('slow');
-    }
+    complete: function () {}
   });
 
 }(window, document, L));
