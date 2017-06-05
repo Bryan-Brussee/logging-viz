@@ -33,8 +33,8 @@
 
   /* add default stamen tile layer */
   L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYnJ5YW5icnVzc2VlIiwiYSI6ImNpdzFua2NmeDA5N2UydG11enhtdzQxdjIifQ.bIm3DjceLQSfvBBN1Kwr7A', {
-    minZoom: 0,
-    maxZoom: 18
+    minZoom: 6,
+    maxZoom: 13
   }).addTo(map);
 
   sidebar = L.control.sidebar('sidebar', {
