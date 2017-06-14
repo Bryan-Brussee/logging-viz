@@ -51,7 +51,7 @@
         $('#total_trees').text(feature.properties.total_trees);
         $('#acreage').text(feature.properties.acreage);
         $('#volume').text(feature.properties.volume);
-        
+
         $('#sold_to').text(feature.properties.sold_to);
         $('#date').text(feature.properties.date);
         $('#total_cost').text(feature.properties.total_cost);
@@ -64,7 +64,7 @@
     },
     pointToLayer: function (feature, latlng) {
       return L.marker(latlng, {
-        icon: treeIcon 
+        icon: treeIcon
       });
     },
   });
@@ -77,7 +77,36 @@
       alert('cannot fetch data!');
     },
     success: function (csv) {
-      L.markerClusterGroup.layerSupport().addTo(map).checkIn(csvLayer);
+      L.markerClusterGroup.layerSupport()
+        .addTo(map)
+        .checkIn(csvLayer)
+        .options.iconCreateFunction = (t) => {
+          const e = t.getChildCount();
+
+          const bidMin = 2;
+          const bidMax = 150;
+          const radiusMin = 40;
+          const radiusMax = 150;
+          const scaleRadius = d3.scaleSqrt().domain([bidMin, bidMax]).range([radiusMin, radiusMax]);
+          const radius = scaleRadius(e);
+
+          const colorMin = 'green';
+          const colorMax = 'yellow';
+          const scaleColor = d3.scaleLinear()
+            .domain([bidMin, bidMax])
+            .range([colorMin, colorMax])
+            .interpolate(d3.interpolateLab);
+          let color = scaleColor(e);
+          color = d3.rgb(color);
+          color.opacity = 0.5;
+
+          return new L.DivIcon({
+            html: `<div style="background-color: ${color}"><span style="color: rgba(0, 0, 0, 1);">${e}</span></div>`,
+            className: 'marker-cluster',
+            iconSize: new L.Point(radius, radius),
+          });
+        };
+
       csvLayer.addData(csv);
 
       var sliderControl = L.control.sliderControl({
