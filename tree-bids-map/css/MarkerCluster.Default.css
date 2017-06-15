@@ -23,7 +23,7 @@
 .marker-cluster {
 	background-clip: padding-box;
 	border-radius: 50%;
-	}
+}
 
 /*Center of the circle*/
 .marker-cluster div {
@@ -35,29 +35,8 @@
 	border-radius: 50%;
 	display: table;
 	font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
-	}
+}
 .marker-cluster span {
 	display: table-cell;
 	vertical-align: middle;
 }
-
-.marker-cluster-small {
-	background-color: rgba(181, 226, 140, 0.6)
-	}
-.marker-cluster-small div {
-	background-color: rgba(110, 204, 57, 0.6);
-	}
-
-.marker-cluster-medium {
-	background-color: rgba(241, 211, 87, 0.6);
-	}
-.marker-cluster-medium div {
-	background-color: rgba(240, 194, 12, 0.6);	
-
-	}
-.marker-cluster-large {
-	background-color: rgba(253, 156, 115, 0.6);
-	}
-.marker-cluster-large div {
-	background-color: rgba(241, 128, 23, 0.6);
-	}
