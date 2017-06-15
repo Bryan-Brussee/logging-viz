@@ -6,7 +6,7 @@
 ! function(t, e, i) {
     L.MarkerClusterGroup = L.FeatureGroup.extend({
             options: {
-                maxClusterRadius: 80,
+                maxClusterRadius: 1,
                 iconCreateFunction: null,
                 spiderfyOnMaxZoom: !0,
                 showCoverageOnHover: !1,

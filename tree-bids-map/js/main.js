@@ -19,7 +19,6 @@
     shadowSize:   [40, 40], // size of the shadow
     iconAnchor:   [25, 49], // point of the icon which will correspond to marker's location
     shadowAnchor: [5, 36],  // the same for the shadow
-    // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
   /* create leaflet map */
@@ -29,11 +28,13 @@
     })
     .on('click', function (e) {
       sidebar.close();
-    });
+    })
+    //playing around with map zooming
+    .on('zoomend', function () {console.log(map.getZoom())});
 
   /* add default stamen tile layer */
   L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYnJ5YW5icnVzc2VlIiwiYSI6ImNpdzFua2NmeDA5N2UydG11enhtdzQxdjIifQ.bIm3DjceLQSfvBBN1Kwr7A', {
-    minZoom: 6,
+    minZoom: 7,
     maxZoom: 13
   }).addTo(map);
 
@@ -85,8 +86,8 @@
 
           const bidMin = 2;
           const bidMax = 150;
-          const radiusMin = 40;
-          const radiusMax = 150;
+          const radiusMin = 20;
+          const radiusMax = 70;
           const scaleRadius = d3.scaleSqrt().domain([bidMin, bidMax]).range([radiusMin, radiusMax]);
           const radius = scaleRadius(e);
 
@@ -103,7 +104,7 @@
           return new L.DivIcon({
             html: `<div style="background-color: ${color}"><span style="color: rgba(0, 0, 0, 1);">${e}</span></div>`,
             className: 'marker-cluster',
-            iconSize: new L.Point(radius, radius),
+            iconSize: new L.Point((radius * (map.getZoom() - 6)), radius * (map.getZoom() - 6)),
           });
         };
 
